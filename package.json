@@ -1,0 +1,44 @@
+{
+  "name": "dsh-plugin-peak-pricing",
+  "version": "1.0.0",
+  "description": "DeepSeek 峰谷定价时段徽章：在侧边栏设置按钮下方显示当前高峰/空闲时段与切换倒计时；侧边栏收起时点击圆点查看浮窗详情。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js"
+  ],
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [],
+      "immediately": true
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "pricing",
+    "peak-off-peak"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-ling/dsh-plugin-peak-pricing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/c-ling/dsh-plugin-peak-pricing/issues"
+  },
+  "homepage": "https://github.com/c-ling/dsh-plugin-peak-pricing#readme"
+}
