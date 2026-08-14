@@ -29,9 +29,16 @@
     "deepseek-harness",
     "dsh",
     "dsh-plugin",
+    "deepseek",
+    "deepseek-ai",
     "cordis",
+    "plugin",
     "pricing",
-    "peak-off-peak"
+    "peak-pricing",
+    "peak-off-peak",
+    "sidebar",
+    "web-ui",
+    "badge"
   ],
   "repository": {
     "type": "git",
