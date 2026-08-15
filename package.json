@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-peak-pricing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DeepSeek 峰谷定价时段徽章：在侧边栏设置按钮下方显示当前高峰/空闲时段与切换倒计时；侧边栏收起时点击圆点查看浮窗详情。",
   "type": "module",
   "main": "lib/index.js",
