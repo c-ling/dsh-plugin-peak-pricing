@@ -25,20 +25,20 @@ Install into the web profile from GitHub (requires `pnpm` on `PATH`; otherwise u
 corepack fallback below):
 
 ```sh
-npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.1"
+npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.2"
 ```
 
 Or with an existing `dsh` binary:
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.1"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.2"
 ```
 
 When `pnpm` is not on `PATH`:
 
 ```sh
 cd ~/.dsh/profiles/web
-corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.0.1"
+corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.0.2"
 ```
 
 > `dsh plugin` forwards its arguments to pnpm and fetches the package from this repo
@@ -65,6 +65,17 @@ curl -s http://127.0.0.1:3080/plugins/dsh-plugin-peak-pricing/client.js | head -
 
 It should print a factory bundle starting with `window.__ModuleLoader__.load({`; the badge
 should be visible in the sidebar footer.
+
+## Update
+
+```sh
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.2"
+# or: npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.2"
+# or: cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.0.2"
+```
+
+Re-running the install command with the new `#v1.0.2` pin upgrades the dependency;
+the loader row in `cordis.patch.yml` stays unchanged. Restart `dsh web`, then hard-refresh.
 
 ## Uninstall
 
