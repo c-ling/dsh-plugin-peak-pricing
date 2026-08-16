@@ -15,6 +15,8 @@ A DeepSeek Harness peak/off-peak pricing badge (dual-face DSH plugin, pure UI, s
 - **Collapsed sidebar**: a centered colored dot (36px circular hover, same as the settings button).
   Hover to reveal a frosted popup with the full text.
 - Refreshes every 30 seconds and switches automatically at each pricing-period boundary.
+- UI copy is bilingual (Chinese/English) and live-switches with the DeepSeek Harness
+  interface language (Settings → General → Language).
 
 Pricing periods (Beijing time UTC+8, no DST): peak 09:00–12:00 and 14:00–18:00; all other
 times are off-peak (half price).
@@ -25,20 +27,20 @@ Install into the web profile from GitHub (requires `pnpm` on `PATH`; otherwise u
 corepack fallback below):
 
 ```sh
-npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.3"
+npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
 ```
 
 Or with an existing `dsh` binary:
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.3"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
 ```
 
 When `pnpm` is not on `PATH`:
 
 ```sh
 cd ~/.dsh/profiles/web
-corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.0.3"
+corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
 ```
 
 > `dsh plugin` forwards its arguments to pnpm and fetches the package from this repo
@@ -69,12 +71,12 @@ should be visible in the sidebar footer.
 ## Update
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.3"
-# or: npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.0.3"
-# or: cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.0.3"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+# or: npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+# or: cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
 ```
 
-Re-running the install command with the new `#v1.0.3` pin upgrades the dependency;
+Re-running the install command with the new `#v1.1.0` pin upgrades the dependency;
 the loader row in `cordis.patch.yml` stays unchanged. Restart `dsh web`, then hard-refresh.
 
 ## Uninstall
@@ -95,15 +97,15 @@ node --check lib/index.js lib/client.js
 
 The client is a hand-written factory-CJS bundle
 (`window.__ModuleLoader__.load({ id: "dsh-plugin-peak-pricing", factory })`) with no build
-step. The UI is registered through the `sidebar.footer.action` slot; `inject: ["slots"]`
-guarantees the fiber applies after the slot runtime is ready.
+step. The UI is registered through the `sidebar.footer.action` slot; `inject: ["slots", "locale"]`
+guarantees the fiber applies after the slot runtime is ready and registers the zh/en
+dictionaries with the harness locale service.
 
 ## Known limitations
 
 - Badge positioning depends on the sidebar footer class names (`hHd-Xa_footArea`). If a DSH
   upgrade changes those class names, the badge falls back into the action row above the
   settings button (still functional); update the `:has()` selectors in `lib/client.js`.
-- The UI copy is in Chinese and is not yet wired into the locale dictionary.
 
 ## License
 
