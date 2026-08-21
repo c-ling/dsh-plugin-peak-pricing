@@ -21,26 +21,39 @@ A DeepSeek Harness peak/off-peak pricing badge (dual-face DSH plugin, pure UI, s
 Pricing periods (Beijing time UTC+8, no DST): peak 09:00–12:00 and 14:00–18:00; all other
 times are off-peak (half price).
 
+## Compatibility
+
+- Fully upgrade-verified against DeepSeek Harness **0.1.1-rc.1** (as of v1.1.1): the
+  `sidebar.footer.action` slot contract, the sidebar footer class names (`hHd-Xa_footArea` /
+  `hHd-Xa_collapsed`), and the locale service API are unchanged; badge rendering, live
+  Chinese/English switching, and both expanded/collapsed states were verified in a real browser.
+- Forward-checked against the npm `latest` (**0.1.1-rc.2**): the slot and class-name sets in
+  `dsh-client-ui-sidebar` are unchanged, and `dsh-client-locale` / `dsh-client-modules` are
+  byte-identical — no impact on this plugin.
+- None of the rc7 → rc8 / 0.1.1 breaking changes (official image components no longer
+  exported, `web_search` args reshaped to a `queries` array, credentials event renamed,
+  `settingsScope.load()` removed, …) touch this plugin.
+
 ## Install
 
 Install into the web profile from GitHub (requires `pnpm` on `PATH`; otherwise use the
 corepack fallback below):
 
 ```sh
-npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
 ```
 
 Or with an existing `dsh` binary:
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
 ```
 
 When `pnpm` is not on `PATH`:
 
 ```sh
 cd ~/.dsh/profiles/web
-corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
 ```
 
 > `dsh plugin` forwards its arguments to pnpm and fetches the package from this repo
@@ -71,12 +84,12 @@ should be visible in the sidebar footer.
 ## Update
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
-# or: npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
-# or: cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+# or: npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+# or: cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
 ```
 
-Re-running the install command with the new `#v1.1.0` pin upgrades the dependency;
+Re-running the install command with the new `#v1.1.1` pin upgrades the dependency;
 the loader row in `cordis.patch.yml` stays unchanged. Restart `dsh web`, then hard-refresh.
 
 ## Uninstall

@@ -19,25 +19,35 @@ DeepSeek Harness 峰谷定价时段徽章（DSH 双面插件，纯 UI、无状�
 
 时段规则（北京时间 UTC+8，无夏令时）：高峰 09:00–12:00、14:00–18:00，其余为空闲（半价）。
 
+## 兼容性
+
+- 已针对 DeepSeek Harness **0.1.1-rc.1** 完成全量升级验证（自 v1.1.1 起）：`sidebar.footer.action`
+  插槽契约、侧边栏脚部样式类名（`hHd-Xa_footArea` / `hHd-Xa_collapsed`）、locale 服务 API 均未变化；
+  徽章渲染、中英实时切换、展开/收起两种形态均通过真实浏览器实测。
+- 已前向核对 npm `latest`（**0.1.1-rc.2**）：`dsh-client-ui-sidebar` 的插槽与类名集合不变，
+  `dsh-client-locale` / `dsh-client-modules` 逐字节一致——对本插件无影响。
+- rc7 → rc8 / 0.1.1 的全部破坏性变更（官方图片组件停止导出、`web_search` 参数改为 `queries` 数组、
+  credentials 事件改名、`settingsScope.load()` 移除等）均不涉及本插件。
+
 ## 安装
 
 从 GitHub 安装到 web profile（需要 `pnpm` 在 `PATH` 上；没有则用下面的 corepack 方式）：
 
 ```sh
-npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
 ```
 
 或使用已有的 `dsh` 命令：
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
 ```
 
 pnpm 不在 `PATH` 上时：
 
 ```sh
 cd ~/.dsh/profiles/web
-corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
 ```
 
 > `dsh plugin` 把参数原样转发给 pnpm，直接从本仓库拉取包（pnpm 9+，本机需装有 `git`）。
@@ -66,12 +76,12 @@ curl -s http://127.0.0.1:3080/plugins/dsh-plugin-peak-pricing/client.js | head -
 ## 更新
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
-# 或：npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
-# 或：cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.0"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+# 或：npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+# 或：cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
 ```
 
-用新的 `#v1.1.0` 重新执行安装命令即可升级依赖；`cordis.patch.yml` 中的 loader 行保持不变。
+用新的 `#v1.1.1` 重新执行安装命令即可升级依赖；`cordis.patch.yml` 中的 loader 行保持不变。
 重启 `dsh web`，然后硬刷新页面。
 
 ## 卸载
