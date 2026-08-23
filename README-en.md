@@ -19,7 +19,8 @@ A DeepSeek Harness peak/off-peak pricing badge (dual-face DSH plugin, pure UI, s
   interface language (Settings → General → Language).
 
 Pricing periods (Beijing time UTC+8, no DST): peak 09:00–12:00 and 14:00–18:00; all other
-times are off-peak (half price).
+times are off-peak (half price). Starting 2026-08-24, Saturdays and Sundays are off-peak
+all day (before that date weekends follow the intraday schedule above).
 
 ## Compatibility
 
@@ -40,20 +41,20 @@ Install into the web profile from GitHub (requires `pnpm` on `PATH`; otherwise u
 corepack fallback below):
 
 ```sh
-npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
 ```
 
 Or with an existing `dsh` binary:
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
 ```
 
 When `pnpm` is not on `PATH`:
 
 ```sh
 cd ~/.dsh/profiles/web
-corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
 ```
 
 > `dsh plugin` forwards its arguments to pnpm and fetches the package from this repo
@@ -84,12 +85,12 @@ should be visible in the sidebar footer.
 ## Update
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
-# or: npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
-# or: cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
+# or: npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
+# or: cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
 ```
 
-Re-running the install command with the new `#v1.1.1` pin upgrades the dependency;
+Re-running the install command with the new `#v1.2.0` pin upgrades the dependency;
 the loader row in `cordis.patch.yml` stays unchanged. Restart `dsh web`, then hard-refresh.
 
 ## Uninstall

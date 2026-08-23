@@ -17,7 +17,8 @@ DeepSeek Harness 峰谷定价时段徽章（DSH 双面插件，纯 UI、无状�
 - 每 30 秒刷新一次；时段边界一到自动切换。
 - 文案支持中英双语，随 DeepSeek Harness 的界面语言设置（Settings → General → Language）实时切换。
 
-时段规则（北京时间 UTC+8，无夏令时）：高峰 09:00–12:00、14:00–18:00，其余为空闲（半价）。
+时段规则（北京时间 UTC+8，无夏令时）：高峰 09:00–12:00、14:00–18:00，其余为空闲（半价）；
+自 2026-08-24 起，周六、周日全天为空闲时段（此前周末仍按上述时段规则）。
 
 ## 兼容性
 
@@ -34,20 +35,20 @@ DeepSeek Harness 峰谷定价时段徽章（DSH 双面插件，纯 UI、无状�
 从 GitHub 安装到 web profile（需要 `pnpm` 在 `PATH` 上；没有则用下面的 corepack 方式）：
 
 ```sh
-npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
 ```
 
 或使用已有的 `dsh` 命令：
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
 ```
 
 pnpm 不在 `PATH` 上时：
 
 ```sh
 cd ~/.dsh/profiles/web
-corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
 ```
 
 > `dsh plugin` 把参数原样转发给 pnpm，直接从本仓库拉取包（pnpm 9+，本机需装有 `git`）。
@@ -76,12 +77,12 @@ curl -s http://127.0.0.1:3080/plugins/dsh-plugin-peak-pricing/client.js | head -
 ## 更新
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
-# 或：npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
-# 或：cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.1.1"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
+# 或：npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
+# 或：cd ~/.dsh/profiles/web && corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v1.2.0"
 ```
 
-用新的 `#v1.1.1` 重新执行安装命令即可升级依赖；`cordis.patch.yml` 中的 loader 行保持不变。
+用新的 `#v1.2.0` 重新执行安装命令即可升级依赖；`cordis.patch.yml` 中的 loader 行保持不变。
 重启 `dsh web`，然后硬刷新页面。
 
 ## 卸载
