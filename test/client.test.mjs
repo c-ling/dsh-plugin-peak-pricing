@@ -252,7 +252,7 @@ test("footer CSS targets stable 0.2.x suffixes, not a build hash", () => {
   assert.match(css, /\.dsh-peak-popup[^}]*background: var\(--dsw-alias-tooltip-bg\)/);
   assert.match(css, /\.dsh-peak-popup[^}]*color: var\(--dsw-static-neutral-bluish-00\)/);
   assert.match(css, /\.dsh-peak-popup \{[^}]*left: 56px; bottom: 14px;[^}]*padding: 3px 7px;/);
-  assert.match(css, /\.dsh-peak-popup \{ left: 48px; bottom: 17px; \}/);
+  assert.match(css, /\.dsh-peak-popup \{ left: 48px; bottom: 12px; \}/);
   assert.match(css, /\[data-sidebar-collapsed\] \.dsh-peak-region \{[^}]*width: 28px; height: 28px;/);
   assert.doesNotMatch(css, /backdrop-filter:\s*blur/);
   assert.doesNotMatch(css, /hHd-Xa_/);
