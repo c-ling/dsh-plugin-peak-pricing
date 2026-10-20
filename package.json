@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-peak-pricing",
-  "version": "1.2.0",
-  "description": "DeepSeek 峰谷定价时段徽章：在侧边栏设置按钮下方显示当前高峰/空闲时段与切换倒计时；侧边栏收起时点击圆点查看浮窗详情。",
+  "version": "2.0.0",
+  "description": "DeepSeek 峰谷定价时段徽章（Web 与 Desktop）：在侧边栏设置按钮下方显示当前高峰/空闲时段与切换倒计时；侧边栏收起时悬停圆点查看浮窗详情。",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -11,18 +11,27 @@
     "./client": {
       "default": "./lib/client.js"
     },
+    "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
   },
   "files": [
     "lib/index.js",
-    "lib/client.js"
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README-en.md"
   ],
   "dsh": {
     "client": {
       "platform": "web",
       "inject": [],
       "immediately": true
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
     }
+  },
+  "scripts": {
+    "test": "node --test"
   },
   "license": "MIT",
   "keywords": [
@@ -39,6 +48,7 @@
     "peak-off-peak",
     "sidebar",
     "web-ui",
+    "desktop",
     "badge",
     "agent",
     "ai",
