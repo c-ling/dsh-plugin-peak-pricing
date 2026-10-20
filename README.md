@@ -14,7 +14,7 @@ DeepSeek Harness 峰谷定价时段徽章（DSH 双面插件，纯 UI、无状�
   `● 空闲时段 · 半价 · 2小时12分后进入高峰`（黄点 = 高峰全价，绿点 = 空闲半价），
   悬停显示北京时间详情。
 - **收起状态**：居中的彩色圆点（36px 圆形 hover 与设置按钮一致），
-  悬停弹出磨砂浮窗显示完整文案。
+  悬停弹出与 DSH 官方 Tooltip 同配色/字号的浮窗显示完整文案。
 - **Desktop 收起**：macOS / Windows 桌面端收起侧边栏时整列宽度为 0，徽章把圆点固定到
   视口左下角，仍然可以悬停查看详情；Web / Linux 保留 56px 轨道，沿用轨道内定位。
 - 每 30 秒刷新一次；时段边界一到自动切换。
@@ -150,6 +150,9 @@ git diff --check
   `[data-sidebar-collapsed]`，圆点 `position: fixed`；
 - 共享 footer 的其它插件条目在桌面收起时通过
   `[data-slot='sidebar.footer.action'] > :not(.dsh-peak-region)` 隐藏，避免残影。
+- 颜色 token：展开卡片用 `--dsw-alias-button-elevated-fill` +
+  `--dsw-alias-border-l3`；tooltip 用 `--dsw-alias-tooltip-bg` + 官方白字、13px/20px
+  字号，与 DSH 内置按钮/Tooltip 保持一致。
 
 测试文件：`test/client.test.mjs`（VM 执行 bundle、时段逻辑、词典与 CSS 断言）、
 `test/host.test.mjs`（host 空实现 + bundle manifest/patch）。

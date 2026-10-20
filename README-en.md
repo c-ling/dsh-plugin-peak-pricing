@@ -14,7 +14,7 @@ no network requests) targeting **DeepSeek Harness 0.2.1+** on Web and Desktop.
   `● Off-peak · 50% off · 2h12m until peak` (yellow dot = peak/full price, green dot =
   off-peak/half price). Hover for Beijing-time details.
 - **Collapsed sidebar**: a centered colored dot (36px circular hover, same as the settings
-  button); hover to reveal a frosted popup with the full text.
+  button); hover to reveal a popup styled with the official DSH Tooltip colors and type scale.
 - **Desktop collapsed**: macOS / Windows collapse the sidebar to zero width, so the dot is
   pinned to the viewport's bottom-left corner and remains hoverable. Web / Linux keep the
   56px rail and use the in-rail position.
@@ -173,6 +173,9 @@ The 0.2.1 footer positioning CSS lives in the `css` array of `lib/client.js`:
   `position: fixed`;
 - other entries sharing the footer are hidden on desktop collapse via
   `[data-slot='sidebar.footer.action'] > :not(.dsh-peak-region)`.
+- Color tokens: the expanded card uses `--dsw-alias-button-elevated-fill` +
+  `--dsw-alias-border-l3`; the tooltip uses `--dsw-alias-tooltip-bg` with the official
+  white text and 13px/20px type scale, matching the built-in DSH buttons/Tooltip.
 
 Tests: `test/client.test.mjs` (VM-evaluated bundle, period logic, dictionary and CSS
 assertions) and `test/host.test.mjs` (empty host half + bundle manifest/patch).

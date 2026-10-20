@@ -248,7 +248,11 @@ test("footer CSS targets stable 0.2.x suffixes, not a build hash", () => {
   assert.match(css, /data-platform='darwin'/);
   assert.match(css, /\.dsh-peak-card[^}]*border-radius: var\(--dsw-radius-md\)/);
   assert.match(css, /\.dsh-peak-card \{ left: -2px; right: -2px; \}/);
+  assert.match(css, /\.dsh-peak-card[^}]*background: var\(--dsw-alias-button-elevated-fill\)/);
+  assert.match(css, /\.dsh-peak-popup[^}]*background: var\(--dsw-alias-tooltip-bg\)/);
+  assert.match(css, /\.dsh-peak-popup[^}]*color: var\(--dsw-static-neutral-bluish-00\)/);
   assert.match(css, /\.dsh-peak-popup \{ bottom: 12px; \}/);
+  assert.doesNotMatch(css, /backdrop-filter:\s*blur/);
   assert.doesNotMatch(css, /hHd-Xa_/);
 });
 
