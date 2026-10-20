@@ -246,6 +246,9 @@ test("footer CSS targets stable 0.2.x suffixes, not a build hash", () => {
   assert.match(css, /\[class\*='collapsed'\]/);
   assert.match(css, /data-slot='sidebar\.footer\.action'/);
   assert.match(css, /data-platform='darwin'/);
+  assert.match(css, /\.dsh-peak-card[^}]*border-radius: var\(--dsw-radius-md\)/);
+  assert.match(css, /\.dsh-peak-card \{ left: -2px; right: -2px; \}/);
+  assert.match(css, /\.dsh-peak-popup \{ bottom: 12px; \}/);
   assert.doesNotMatch(css, /hHd-Xa_/);
 });
 
