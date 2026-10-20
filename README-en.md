@@ -13,8 +13,10 @@ no network requests) targeting **DeepSeek Harness 0.2.1+** on Web and Desktop.
 - **Expanded sidebar**: a single-line card pinned under the settings button
   `● Off-peak · 50% off · 2h12m until peak` (yellow dot = peak/full price, green dot =
   off-peak/half price). Hover for Beijing-time details.
-- **Collapsed sidebar**: a centered colored dot (36px circular hover, same as the settings
-  button); hover to reveal a popup styled with the official DSH Tooltip colors and type scale.
+- **Collapsed sidebar**: a centered colored dot in the Web/Linux rail (36px circular hover,
+  same as the settings button); on desktop zero-width collapse the floating dot uses a more
+  compact 28px hit area. Hover to reveal a popup styled with the official DSH Tooltip colors
+  and type scale.
 - **Desktop collapsed**: macOS / Windows collapse the sidebar to zero width, so the dot is
   pinned to the viewport's bottom-left corner and remains hoverable. Web / Linux keep the
   56px rail and use the in-rail position.
