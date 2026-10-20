@@ -355,5 +355,7 @@ test("collapsed rail renders a dot and a hover popup", () => {
   assert.match(circle.props.className, /dsh-peak-circle/);
   const popup = tree.children[1];
   assert.match(popup.props.className, /dsh-peak-popup/);
-  assert.match(popup.children[1].children[0], /空闲时段/);
+  assert.equal(popup.children.length, 1, "tooltip must not repeat the status dot");
+  assert.match(popup.children[0].props.className, /dsh-peak-popup-main/);
+  assert.match(popup.children[0].children[0], /空闲时段/);
 });
