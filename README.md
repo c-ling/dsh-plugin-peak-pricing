@@ -41,9 +41,9 @@ DeepSeek Harness 峰谷定价时段徽章（DSH 双面插件，纯 UI、无状�
 Web（`dsh plugin` 会把包加入 profile 的 `dsh.profile.bundles`，bundle patch 负责插入 loader 行）：
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 # 或
-npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 ```
 
 Desktop：使用 Desktop 自带 CLI 或「Plugins」页面（`npx @deepseek-ai/dsh` 会拒绝
@@ -51,7 +51,7 @@ Desktop：使用 Desktop 自带 CLI 或「Plugins」页面（`npx @deepseek-ai/d
 
 ```sh
 "/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh" \
-  plugin --profile desktop add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+  plugin --profile desktop add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 ```
 
 安装后重启宿主：Web 重启 `dsh web`；Desktop 退出并重新打开 App。
@@ -68,7 +68,7 @@ Desktop：使用 Desktop 自带 CLI 或「Plugins」页面（`npx @deepseek-ai/d
 ```sh
 # pnpm 不在 PATH 上时
 cd ~/.dsh/profiles/web
-corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 ```
 
 在 `~/.dsh/profiles/web/cordis.patch.yml` 增加：
@@ -108,13 +108,13 @@ python3 -m json.tool package.json
 
 ## 更新
 
-用新的 `#v2.0.0` 重新执行安装命令即可；bundle 模式不需要改 `cordis.patch.yml`：
+用新的 `#v2.0.1` 重新执行安装命令即可；bundle 模式不需要改 `cordis.patch.yml`：
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 # Desktop
 "/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh" \
-  plugin --profile desktop add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+  plugin --profile desktop add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 ```
 
 重启宿主，然后硬刷新页面 / 重开 Desktop。

@@ -21,7 +21,7 @@ test("host half exports the loader identity and applies as a no-op", () => {
 
 test("package manifest is a 0.2.1 bundle with the client face", () => {
   assert.equal(packageJson.name, "dsh-plugin-peak-pricing");
-  assert.equal(packageJson.version, "2.0.0");
+  assert.equal(packageJson.version, "2.0.1");
   assert.equal(packageJson.type, "module");
   assert.equal(packageJson.main, "lib/index.js");
   assert.deepEqual(packageJson.dsh.client, {

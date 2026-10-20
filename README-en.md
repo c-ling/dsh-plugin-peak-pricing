@@ -52,9 +52,9 @@ Web (`dsh plugin` adds the package to the profile's `dsh.profile.bundles`; the b
 inserts the loader row):
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 # or
-npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+npx @deepseek-ai/dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 ```
 
 Desktop: use the Desktop app's bundled CLI or the Plugins page
@@ -63,7 +63,7 @@ Desktop app):
 
 ```sh
 "/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh" \
-  plugin --profile desktop add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+  plugin --profile desktop add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 ```
 
 Restart the host after installing: restart `dsh web` for Web, or quit and reopen the app for
@@ -82,7 +82,7 @@ will be activated twice.
 ```sh
 # when pnpm is not on PATH
 cd ~/.dsh/profiles/web
-corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+corepack pnpm add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 ```
 
 Add this to `~/.dsh/profiles/web/cordis.patch.yml`:
@@ -126,14 +126,14 @@ In the UI (after restart):
 
 ## Update
 
-Re-run the install command with the new `#v2.0.0` pin. In bundle mode no
+Re-run the install command with the new `#v2.0.1` pin. In bundle mode no
 `cordis.patch.yml` change is needed:
 
 ```sh
-dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+dsh plugin --profile web add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 # Desktop
 "/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh" \
-  plugin --profile desktop add "github:c-ling/dsh-plugin-peak-pricing#v2.0.0"
+  plugin --profile desktop add "github:c-ling/dsh-plugin-peak-pricing#v2.0.1"
 ```
 
 Restart the host, then hard-refresh the page / reopen Desktop.
